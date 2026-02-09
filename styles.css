@@ -1,0 +1,63 @@
+/* Background */
+.gradient-background {
+  background: linear-gradient(135deg, #ff6b9f, #ff85c1, #ffd1e8, #ffffff);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating hearts */
+#floating-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  to { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* Heartbeat */
+.heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Sparkles */
+.sparkle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: pink;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleFade 0.6s forwards;
+}
+
+@keyframes sparkleFade {
+  to { transform: scale(2); opacity: 0; }
+}
